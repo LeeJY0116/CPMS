@@ -12,15 +12,18 @@
 <body>
     <header>
         <a href="#">
-            <h1>오따세우 로그인</h1>
+            <div class = "head">
+                <li><h1>↩</h1></li>
+                <li><h1>오따세우 로그인</h1></li>
+            </div>
         </a>
     </header>
     <section>
         <div class="login">
             <form action="" method="get">
-                ID : <input id='userid' type='text' /><br>
-                비밀번호 : <input id='userpassword' type='password' maxlength='5' /><br>
-                <input type='submit' value="로그인">
+                <input id='userid' type='text' placeholder="UserName" /><br>
+                <input id='userpassword' type='password' placeholder="PassWord" maxlength='5' /><br>
+                <div><input type='submit' class="login_button" value="로그인"></div>
                 <button onclick="location.href = '#'">회원가입</button>
             </form>
         </div>
