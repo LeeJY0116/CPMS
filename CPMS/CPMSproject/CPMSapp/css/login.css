@@ -7,8 +7,8 @@
 }
 
 .login {
-    padding-left: 15%;
-    padding-top:20%;
+    padding-left: 25%;
+    padding-top:30%;
 }
 
 .login_id input , .login_pw input{
@@ -20,11 +20,14 @@
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 10px;
+    text-align: center;
 }
 
 .login_id ::placeholder, .login_pw ::placeholder{
     color : gray;
     font-size:15pt;
+    text-align: center;
+    
 }
 
 .login_button:visited{
@@ -39,7 +42,7 @@
 
 .login_button , .login > form > button{
     margin-top: 20px;
-    background : #74da76;
+    background : #72F7BF;
     width: 400px;
     height: 50px;
     border-radius: 20px;
@@ -50,7 +53,7 @@
 .head{
     display: flex;
     line-height: 86px;
-    background: #74da76;
+    background: #72F7BF;
     width: 100%;
 }
 
