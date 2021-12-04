@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPMS</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID"></script>
+</head>
+
+<body>
+    <header id="headline" style="width:100%;height:200px;">
+        <div>
+            <a href="#">
+                <h1>오따세우 로그인</h1>
+            </a>
+        </div>
+        <div class="center-container">
+            <form action="" method="get">
+                <input id="search" type="text" placeholder="검색할 내용" />
+                <input type="submit" value="검색">
+            </form>
+        </div>
+    </header>
+    <section>
+        <div id="map" style="width:100%;height:800px;"></div>
+
+        <script>
+            var mapOptions = {
+                center: new naver.maps.LatLng(37.3595704, 127.105399),
+                zoom: 10
+            };
+
+            var map = new naver.maps.Map('map', mapOptions);
+        </script>
+        <div class="center-container">
+            <button type="button">목록보기</button>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
