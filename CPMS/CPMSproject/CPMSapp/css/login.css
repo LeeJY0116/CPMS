@@ -1,0 +1,47 @@
+* {
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+    color: #000;
+}
+
+.login {
+    width: 80px;
+    padding-left: 220px;
+    padding-top:100px;
+}
+
+.login > form > input{
+    height: 40px;
+    width: 300px;
+    background: white;
+    margin-bottom: 10px;
+}
+
+.login > form > ::placeholder{
+    height: 30px;
+    color : gray;
+    font-size:15pt
+}
+
+.login_button {
+    margin-top: 20px;
+    background : yellowgreen;
+    width: 200px;
+    height: 30px;
+}
+.head{
+    display: flex;
+    line-height: 86px;
+    background: #74da76;
+}
+
+.head >li{
+    margin-left: 20px;
+}
+
+.head > li > h1{
+    color:white;
+}
