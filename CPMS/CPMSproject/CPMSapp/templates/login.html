@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" >
 
 <head>
     <meta charset="UTF-8">
@@ -11,19 +11,30 @@
 
 <body>
     <header>
-        <a href="#">
-            <div class = "head">
-                <li><h1>↩</h1></li>
-                <li><h1>오따세우 로그인</h1></li>
-            </div>
-        </a>
+        <div class="head" style="width: 100%;">
+                <li>
+                    <h1><a href="#">↩</a></h1>
+                </li>
+                <li>
+                    <h1><a href="http://www.naver.com">오따세우 로그인</a></h1>
+                </li>
+        </div>
     </header>
     <section>
         <div class="login">
             <form action="" method="get">
-                <input id='userid' type='text' placeholder="UserName" /><br>
-                <input id='userpassword' type='password' placeholder="PassWord" maxlength='5' /><br>
-                <div><input type='submit' class="login_button" value="로그인"></div>
+                <div class="login_id">
+                    <h4>UserID</h4>
+                    <input id='userid' type='text' placeholder="Username" /><br>
+                </div>
+                <div class="login_pw">
+                    <h4>Password</h4>
+                    <input id='userpassword' type='password' placeholder="Password" maxlength='5' /><br>
+                </div>
+                <div class="login_check">
+                    <input type="checkbox" name="" id=""> 로그인 정보 기억
+                </div>
+                <input type='submit' class="login_button" value="로그인">
                 <button onclick="location.href = '#'">회원가입</button>
             </form>
         </div>

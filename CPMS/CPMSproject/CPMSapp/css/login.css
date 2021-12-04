@@ -1,47 +1,75 @@
 * {
     list-style: none;
     text-decoration: none;
-    border-collapse: collapse;
     margin: 0px;
     padding: 0px;
-    color: #000;
+    box-sizing: border-box;
 }
 
 .login {
-    width: 80px;
-    padding-left: 220px;
-    padding-top:100px;
+    padding-left: 15%;
+    padding-top:20%;
 }
 
-.login > form > input{
-    height: 40px;
-    width: 300px;
+.login_id input , .login_pw input{
+    outline: none;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4), -1px -1px 3px rgba(0, 0, 0, 1);
+    height: 60px;
+    width: 400px;
     background: white;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
-.login > form > ::placeholder{
-    height: 30px;
+.login_id ::placeholder, .login_pw ::placeholder{
     color : gray;
-    font-size:15pt
+    font-size:15pt;
 }
 
-.login_button {
+.login_button:visited{
     margin-top: 20px;
-    background : yellowgreen;
-    width: 200px;
-    height: 30px;
+    background : white;
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+    letter-spacing: 10px;
+    font-size: 15pt;
 }
+
+.login_button , .login > form > button{
+    margin-top: 20px;
+    background : #74da76;
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+    letter-spacing: 10px;
+    font-size: 15pt;
+}
+
 .head{
     display: flex;
     line-height: 86px;
     background: #74da76;
+    width: 100%;
 }
 
-.head >li{
+.head li{
     margin-left: 20px;
 }
 
-.head > li > h1{
+.head li h1 a{
     color:white;
+}
+
+.login_id h4 , .login_pw h4{
+    font-size: 20pt;
+    margin-bottom: 10px;
+    margin-left : -3%;
+}
+.login_check{
+    margin-top: -2%;
+    font-size: 15pt;
+    width: 80%;
+    font-weight: bold;
 }
