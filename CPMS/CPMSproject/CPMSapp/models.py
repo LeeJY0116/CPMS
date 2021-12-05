@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.postgres.fields import ArrayField
+from django.db.models.fields import BooleanField
 
 # Create your models here.
 class Profile(models.Model):
@@ -7,6 +7,10 @@ class Profile(models.Model):
     userName = models.CharField(max_length=10)
     userID = models.CharField(max_length=20)
     userPassword = models.CharField(max_length=30)
+    bool_logIO = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.userName
 
 class MyTicket(models.Model):
     # Profile 데이터베이스랑 종속
@@ -16,5 +20,8 @@ class MyTicket(models.Model):
         null = False,
     )
     objects = models.Manager
-    myTicket = ArrayField(ArrayField(models.TextField()))
-    myPaymentDetails = ArrayField(ArrayField(models.TextField()))
+    myTicket = models.TextField()
+    myPaymentDetails = models.TextField()
+
+    def __str__(self):
+        return str(self.profile) + "\'s ticket"
