@@ -1,0 +1,129 @@
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.head li h1 a{
+    color: white;
+}
+
+.head{
+    margin-top: -200px;
+    height: 100px;
+    font-size: 20pt;;
+    display: flex;
+    background: #72F7BF;
+}
+
+header{
+    margin-top: 195px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+::placeholder{
+    font-size: 15pt;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}
+.nickname{
+    display: flex;
+    font-size: 20pt;
+    font-weight: bolder;
+    padding-left: 195px;
+    margin-bottom: 3%;
+}
+
+.id{
+    display: flex;
+    font-size: 20pt;
+    font-weight: bolder;
+    padding-left: 195px;
+    margin-bottom: 3%;
+}
+
+.password{
+    display: flex;
+    font-size: 20pt;
+    font-weight: bolder;
+    padding-left: 22%;
+    margin-bottom: 3%;
+}
+
+.password-reconfirm{
+    display: flex;
+    font-size: 20pt;
+    font-weight: bolder;
+    padding-left: 10%;
+    margin-bottom: 3%;
+}
+
+.signup-etc{
+    padding-left: 30%;
+}
+
+.password input{
+    box-shadow: 4px 3px 1px rgba(0, 0, 0, 0.9), -1px -1px 3px rgba(0, 0, 0, 1);
+    margin-left: 5%;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 15pt;
+    background: gray;
+}
+
+.nickname input{
+    box-shadow: 4px 3px 1px rgba(0, 0, 0, 0.9), -1px -1px 3px rgba(0, 0, 0, 1);
+    margin-left: 5%;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 15pt;
+    background: gray;
+}
+
+.idput {
+    box-shadow: 4px 3px 1px rgba(0, 0, 0, 0.9), -1px -1px 3px rgba(0, 0, 0, 1);
+    margin-left: 5%;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 15pt;
+    display: flex;
+    background: gray;
+}
+
+.idbutton{
+    box-shadow: 4px 3px 1px rgba(0, 0, 0, 0.9), -1px -1px 3px rgba(0, 0, 0, 1);
+    margin-left: 20px;
+    text-align: center;
+    width: 80px;
+    border-radius: 10px;
+    font-size: 10pt;
+    font-weight: bolder;
+    background: gray;
+}
+
+.password-reconfirm input{
+    margin-left: 5%;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 15pt;
+    background: gray;
+    box-shadow: 4px 3px 1px rgba(0, 0, 0, 0.9), -1px -1px 3px rgba(0, 0, 0, 1);
+}
+.signup-etc input{
+    box-shadow: 4px 3px 1px rgba(0, 0, 0, 0.9), -1px -1px 3px rgba(0, 0, 0, 1);
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    background: #515050;
+    color: white;
+    font-size: 15pt;
+}

@@ -5,26 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/signup.css">
     <title>CPMS-signup</title>
 </head>
 
-<body>
-    <h1>CPMS 회원가입</h1>
-    <h3>CPMS 소중한 회원을 되어주세요</h3>
+<body>>
+    <header >
+        <div class="head" style="width: 100%;">
+            <li>
+                <h1><a href="#">↩</a></h1>
+            </li>
+            <li>
+                <h1><a href="http://www.naver.com">회원가입</a></h1>
+            </li>
+    </div>
+        <h1>CPMS 회원가입</h1>
+        <h3>CPMS 소중한 회원이 되어주세요</h3>
+    </header>
     <form name="CPMS-signup" action="" method="post">
-        <br>닉네임<br>
-        <input type="text" name="s_user_name" placeholder="닉네임 입력">
-        <br>아이디<br>
-        <input type="text" name="s_userId" placeholder="아이디 입력">
-        <input type="button" name="s_userCheck" value="아이디 확인">
-        <br>
-        비밀번호<br>
-        <input type="password" name="s_userPw1" placeholder="비밀번호"><br>
-        비밀번호 재확인<br>
-        <input type="password" name="s_user_Pw2" placeholder="동일한 비밀번호">
-        <input type="button" name="s_user_PwCheck" value="비밀번호 재확인">
-        <br>
-        <input type="submit" name="s_user_submit" value="회원가입">
+        <div class="nickname">
+            <br><div class="nictext">닉네임</div><br>
+            <input type="text" name="s_user_name" placeholder="닉네임 입력">
+        </div>
+        <div class="id">
+            <br><div class="idtext">아이디</div><br>
+            <input type="text" name="s_userId" class = "idput" placeholder="아이디 입력">
+            <input type="button" class = "idbutton"  name="s_userCheck" value="아이디 확인">
+        </div>
+        <div class="password">
+            <br><div class="pwtext">비밀번호</div><br>
+            <input type="password" name="s_userPw1" placeholder="비밀번호">
+        </div>
+        <div class="password-reconfirm">
+            <br><div class="pwcftext">비밀번호 재확인</div><br>
+            <input type="password" name="s_user_Pw2" placeholder="동일한 비밀번호">
+        </div>
+        <div class="signup-etc">
+            <br>
+            <input type="submit" name="s_user_submit" value="회원가입">
+        </div>
+
     </form>
 
     <footer>
