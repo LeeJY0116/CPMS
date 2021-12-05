@@ -23,9 +23,10 @@
                 </li>
         </div>
     </header>
+    <h3>{{str_error}}</h3>
     <section>
         <div class="login">
-            <form action="" method="POST">
+            <form action="{% url 'trying_login' %}" method="POST">
                 {% csrf_token %}
                 <div class="login_id">
                     <h4>UserID</h4>
