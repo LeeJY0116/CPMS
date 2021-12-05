@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="ko" >
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -8,19 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CPMS_login</title>
     <link rel="stylesheet" href="../static/login.css">
-    {% load static %}
-    <link rel='stylesheet' type="text/css" href="{% static 'login.css' %}"/>
+    <link rel='stylesheet' type="text/css" href="{% static 'login.css' %}" />
 </head>
 
 <body>
     <header>
-        <div class="head" style="width: 100%;">
-                <li>
-                    <h1><a href="#">↩</a></h1>
-                </li>
-                <li>
-                    <h1><a href="http://www.naver.com">오따세우 로그인</a></h1>
-                </li>
+        <div class="head">
+            <li>
+                <h1><a href="#">↩</a></h1>
+            </li>
+            <li>
+                <h1><a href="http://www.naver.com">오따세우 로그인</a></h1>
+            </li>
         </div>
     </header>
     <section>
@@ -28,10 +26,12 @@
             <form action="" method="get">
                 <div class="login_id">
                     <h4>UserID</h4>
+                    <img src="../image/user.png">
                     <input id='userid' type='text' placeholder="Username" maxlength="10" /><br>
                 </div>
                 <div class="login_pw">
                     <h4>Password</h4>
+                    <img src="../image/password.png">
                     <input id='userpassword' type='password' placeholder="Password" maxlength='13' /><br>
                 </div>
                 <div class="login_check">
