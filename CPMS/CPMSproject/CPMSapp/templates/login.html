@@ -16,16 +16,18 @@
     <header>
         <div class="head" style="width: 100%;">
                 <li>
-                    <h1><a href="#">↩</a></h1>
+                    <!-- 뒤로가기 링크 -->
+                    <h1><a href="javascript:window.history.back();">↩</a></h1>
                 </li>
                 <li>
-                    <h1><a href="http://www.naver.com">오따세우 로그인</a></h1>
+                    <!-- 메인화면 링크 -->
+                    <h1><a href="./index.html">오따세우 로그인</a></h1> 
                 </li>
         </div>
     </header>
     <section>
         <div class="login">
-            <form action="" method="get">
+            <form action="" method="get" onsubmit="validation()">
                 <div class="login_id">
                     <h4>UserID</h4>
                     <input id='userid' type='text' placeholder="Username" /><br>
@@ -38,9 +40,20 @@
                     <input type="checkbox" name="" id=""> 로그인 정보 기억
                 </div>
                 <input type='submit' class="login_button" value="로그인">
-                <button onclick="location.href = '#'">회원가입</button>
             </form>
+            <button class = "signup" onclick="location.href = 'signup.html'">회원가입</button>
         </div>
+        <script>
+            function validation(){
+                if (document.getElementById('userid').value.length == 0){
+                    alert("아이디를 입력하세요");
+                    return false;
+                }else if(document.getElementById('userpassword').value.length == 0){
+                    alert("비밀번호를 입력하세요");
+                    return false;
+                }
+            }
+        </script>
     </section>
 
 </body>

@@ -40,7 +40,7 @@
     font-size: 15pt;
 }
 
-.login_button , .login > form > button{
+.login_button , .login > button{
     margin-top: 20px;
     background : #72F7BF;
     width: 400px;
