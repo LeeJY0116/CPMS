@@ -31,13 +31,11 @@
             <br>
             <div class="nictext">닉네임</div><br>
             <input type="text" name="s_user_name" placeholder="닉네임 입력">
-            <input type="button" class="namebutton" name="s_nameCheck" value="닉네임 확인">
         </div>
         <div class="id">
             <br>
             <div class="idtext">아이디</div><br>
             <input type="text" name="s_userId" class="idput" placeholder="아이디 입력">
-            <input type="button" class="idbutton" name="s_idCheck" value="아이디 확인">
         </div>
         <div class="password">
             <br>
@@ -51,10 +49,15 @@
         </div>
         <div class="signup-etc">
             <br>
-            <input type="submit" name="s_user_submit" value="회원가입">
+            <button name="s_user_submit" value="회원가입">회원가입</button>
         </div>
 
     </form>
+    <!-- <script>
+        function stopDefAction(evt) {
+            evt.preventDefault();
+        }
+    </script> -->
 
     <footer style="margin-top: 16%;">
         <div class="container col-lg-4 home_bottom_banner"
