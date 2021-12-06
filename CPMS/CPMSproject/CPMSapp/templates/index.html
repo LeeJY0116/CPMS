@@ -15,20 +15,20 @@
             <h1><a href="">
                     오따세우
                 </a></h1>
-            <h3>
+            <!-- <h3>
                 {% if bool_logIO %}
                 {{user}}님이 로그인 되었습니다.
                 {% else %}
                 로그인하지 않았습니다.
                 {% endif %}
-            </h3>
+            </h3> -->
         </div>
         <div class="center-container">
             <input id="search" type="text" placeholder="검색할 내용" />
-            <input type="button" onclick="getSearchdata(document.getElementById('search').value)" value="검색">
+            <input type="button" onclick="searchlocation(document.getElementById('search').value)" value="검색">
         </div>
     </header>
-    <div id="map" style="width:100%;height:350px;"></div>
+    <div id="map" style="width:100%;height:1000px;"></div>
 
     <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3fd06bc4839879de7fd8f6b44b09cc61&libraries=services"></script>
@@ -49,7 +49,10 @@
         var ps = new kakao.maps.services.Places();
 
         // 키워드로 장소를 검색합니다
-        function getSearchdata(data){
+        function searchlocation(data) {
+            if(data.search("주차") == -1){
+                data = data + " 주차장";
+            }
             ps.keywordSearch(data, placesSearchCB);
         }
 
@@ -70,7 +73,6 @@
                 map.setBounds(bounds);
             }
         }
-
         // 지도에 마커를 표시하는 함수입니다
         function displayMarker(place) {
 
@@ -79,6 +81,11 @@
                 map: map,
                 position: new kakao.maps.LatLng(place.y, place.x)
             });
+            
+            var markerImage = new kakao.maps.MarkerImage(
+                '../image/pngwing.com (1).png',
+                new kakao.maps.Size(31, 35), new kakao.maps.Point(13, 34));
+            marker.setImage(markerImage);
 
             // 마커에 클릭이벤트를 등록합니다
             kakao.maps.event.addListener(marker, 'click', function () {
@@ -87,7 +94,7 @@
                 infowindow.open(map, marker);
             });
         }
-        //
+
         if (navigator.geolocation) {
 
             // GeoLocation을 이용해서 접속 위치를 얻어옵니다
@@ -97,10 +104,10 @@
                     lon = position.coords.longitude; // 경도
 
                 var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-                    message = '<div style="padding:5px;">내 위치</div>'; // 인포윈도우에 표시될 내용입니다
+                    message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
 
                 // 마커와 인포윈도우를 표시합니다
-                displayMarker(locPosition, message);
+                current_displayMarker(locPosition, message);
 
             });
 
@@ -109,20 +116,24 @@
             var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
                 message = '위치를 불러올 수 없습니다.';
 
-            displayMarker(locPosition, message);
+            current_displayMarker(locPosition, message);
         }
-
         // 지도에 마커와 인포윈도우를 표시하는 함수입니다
-        function displayMarker(locPosition, message) {
+        function current_displayMarker(locPosition, message) {
 
             // 마커를 생성합니다
             var marker = new kakao.maps.Marker({
                 map: map,
                 position: locPosition
             });
+            
+            var markerImage = new kakao.maps.MarkerImage(
+                '../image/pngwing.com.png',
+                new kakao.maps.Size(31, 35), new kakao.maps.Point(13, 34));
+            marker.setImage(markerImage);
 
-            var iwContent = message; // 인포윈도우에 표시할 내용
-            iwRemoveable = true;
+            var iwContent = message, // 인포윈도우에 표시할 내용
+                iwRemoveable = true;
 
             // 인포윈도우를 생성합니다
             var infowindow = new kakao.maps.InfoWindow({
@@ -131,10 +142,11 @@
             });
 
             // 인포윈도우를 마커위에 표시합니다 
-            infowindow.open(map, marker);
+            // infowindow.open(map, marker);
 
             // 지도 중심좌표를 접속위치로 변경합니다
             map.setCenter(locPosition);
+
         }
     </script>
 </body>

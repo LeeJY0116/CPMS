@@ -11,7 +11,7 @@
     <link rel='stylesheet' type="text/css" href="{% static 'login.css' %}" />
 </head>
 
-<body>
+<body onload="loginvalidation()">
     <header>
         <div class="head" style="width: 100%;">
                 <li>
@@ -24,11 +24,10 @@
                 </li>
         </div>
     </header>
-    <h3>{{str_error}}</h3>
     <section>
         <div class="login">
 
-            <form action="{% url 'trying_login' %}" method="POST", onsubmit="validation()">
+            <form action="{% url 'trying_login' %}" method="POST", onsubmit="return validation()" >
                 {% csrf_token %}
                 <div class="login_id">
                     <h4>UserID</h4>
@@ -49,6 +48,12 @@
         </div>
 
         <script>
+            function loginvalidation(){
+            //아이디 비밀번호 틀릴 때
+            if('{{str_error}}'.length != 0){ 
+                alert("{{str_error}}");
+                }
+            }
             function validation(){
                 //아무것도 입력 안했을 때
                 if (document.getElementById('userid').value.length == 0){
