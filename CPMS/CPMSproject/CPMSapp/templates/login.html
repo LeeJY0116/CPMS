@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="ko" >
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -8,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CPMS_login</title>
     <link rel="stylesheet" href="../static/login.css">
-    {% load static %}
-    <link rel='stylesheet' type="text/css" href="{% static 'login.css' %}"/>
+    <link rel='stylesheet' type="text/css" href="{% static 'login.css' %}" />
 </head>
 
 <body>
     <header>
+<<<<<<< HEAD
         <div class="head" style="width: 100%;">
                 <li>
                     <!-- 뒤로가기 링크 -->
@@ -30,11 +29,13 @@
             <form action="" method="get" onsubmit="validation()">
                 <div class="login_id">
                     <h4>UserID</h4>
-                    <input id='userid' type='text' placeholder="Username" /><br>
+                    <img src="../image/user.png">
+                    <input id='userid' type='text' placeholder="Username" maxlength="10" /><br>
                 </div>
                 <div class="login_pw">
                     <h4>Password</h4>
-                    <input id='userpassword' type='password' placeholder="Password" maxlength='5' /><br>
+                    <img src="../image/password.png">
+                    <input id='userpassword' type='password' placeholder="Password" maxlength='13' /><br>
                 </div>
                 <div class="login_check">
                     <input type="checkbox" name="" id=""> 로그인 정보 기억

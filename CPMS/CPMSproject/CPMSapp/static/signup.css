@@ -1,0 +1,103 @@
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.top li,
+li a {
+    color: white;
+    margin-left: 5%;
+}
+
+.top {
+    height: 86px;
+    display: flex;
+    background: #72F7BF;
+    width: 100%;
+    line-height: 86px;
+    box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.7), -1px 0px 10px rgba(0, 0, 0, 1);
+}
+
+.head {
+    margin-top: 15%;
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+::placeholder {
+    font-size: 15pt;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}
+
+.nickname,
+.id {
+    display: flex;
+    font-size: 20pt;
+    font-weight: bolder;
+    padding-left: 195px;
+    margin-bottom: 3%;
+}
+
+.password {
+    display: flex;
+    font-size: 20pt;
+    font-weight: bolder;
+    padding-left: 22%;
+    margin-bottom: 3%;
+}
+
+.password-reconfirm {
+    display: flex;
+    font-size: 20pt;
+    font-weight: bolder;
+    padding-left: 10%;
+    margin-bottom: 3%;
+}
+
+.signup-etc {
+    padding-left: 30%;
+}
+
+.password input,
+.nickname input,
+.idput,
+.password-reconfirm input {
+    box-shadow: 4px 3px 1px rgba(0, 0, 0, 0.9), -1px -1px 3px rgba(0, 0, 0, 1);
+    margin-left: 5%;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 15pt;
+    background: #CACACA;
+}
+
+.idbutton {
+    box-shadow: 4px 3px 1px rgba(0, 0, 0, 0.9), -1px -1px 3px rgba(0, 0, 0, 1);
+    margin-top: 7px;
+    margin-left: 20px;
+    text-align: center;
+    width: 80px;
+    border-radius: 10px;
+    height: 30px;
+    font-size: 10pt;
+    font-weight: bolder;
+    background: #CACACA;
+}
+
+.signup-etc input {
+    margin-top: 70px;
+    box-shadow: 4px 3px 1px rgba(0, 0, 0, 0.9), -1px -1px 3px rgba(0, 0, 0, 1);
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    background: #515050;
+    color: white;
+    font-size: 15pt;
+}
