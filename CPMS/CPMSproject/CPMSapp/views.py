@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Profile
 
@@ -7,6 +8,41 @@ def cpms_main(request):
     return render(request, 'index.html', {'bool_logIO':False})
 
 def cpms_signup(request):
+    bool_nameCheck = False
+    bool_idCheck = False
+
+    if request.method == 'POST':
+        nickname = request.POST['s_user_name']
+        id = request.POST['s_userId']
+        password = request.POST['s_userPw1']
+        password_reconfirm = request.POST['s_user_Pw2']
+
+        if '닉네임 확인' in request:
+            if Profile.objects.filter(userName=nickname):
+                return HttpResponse('이미 존재하는 닉네임입니다.')
+            bool_nameCheck = True
+
+        if '아이디 확인' in request:
+            if Profile.objects.filter(userID=id):
+                return HttpResponse('이미 존재하는 아이디입니다.')
+            bool_idCheck = True
+        
+        if not bool_nameCheck:
+            return HttpResponse('닉네임 확인 버튼을 눌러주세요')
+        elif not bool_idCheck:
+            return HttpResponse('아이디 확인 버튼을 눌러주세요')
+
+        # 비번 동일 체크
+        if password != password_reconfirm:
+            return HttpResponse('비밀번호가 일치하지 않습니다.')
+
+        Profile.objects.create(
+            userName=nickname,
+            userID = id,
+            userPassword = password,
+        )
+        return redirect('trying_login')
+
     return render(request, 'signup.html')
 
 def cpms_login(request):
