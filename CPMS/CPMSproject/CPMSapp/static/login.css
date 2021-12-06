@@ -40,13 +40,9 @@
     font-size: 15pt;
 }
 
-<<<<<<< HEAD
-.login_button , .login > button{
-=======
 .login_button,
 .login>form>button {
     box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.7), -1px -1px 3px rgba(0, 0, 0, 1);
->>>>>>> origin/이주엽
     margin-top: 20px;
     background: #72F7BF;
     width: 400px;
