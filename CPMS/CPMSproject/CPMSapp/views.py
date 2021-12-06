@@ -6,6 +6,9 @@ from .models import Profile
 def cpms_main(request):    
     return render(request, 'index.html', {'bool_logIO':False})
 
+def cpms_signup(request):
+    return render(request, 'signup.html')
+
 def cpms_login(request):
     if request.method == 'POST':
         # 아이디 체크
