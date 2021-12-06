@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="ko" >
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -9,40 +8,56 @@
     <title>CPMS_login</title>
     <link rel="stylesheet" href="../static/login.css">
     {% load static %}
-    <link rel='stylesheet' type="text/css" href="{% static 'login.css' %}"/>
+    <link rel='stylesheet' type="text/css" href="{% static 'login.css' %}" />
 </head>
 
 <body>
     <header>
         <div class="head" style="width: 100%;">
                 <li>
-                    <h1><a href="#">↩</a></h1>
+                    <!-- 뒤로가기 링크 -->
+                    <h1><a href="javascript:window.history.back();">↩</a></h1>
                 </li>
                 <li>
-                    <h1><a href="http://www.naver.com">오따세우 로그인</a></h1>
+                    <!-- 메인화면 링크 -->
+                    <h1><a href="./index.html">오따세우 로그인</a></h1> 
                 </li>
         </div>
     </header>
     <h3>{{str_error}}</h3>
     <section>
         <div class="login">
-            <form action="{% url 'trying_login' %}" method="POST">
+
+            <form action="{% url 'trying_login' %}" method="POST", onsubmit="validation()">
                 {% csrf_token %}
                 <div class="login_id">
                     <h4>UserID</h4>
-                    <input id='userid' type='text' placeholder="Username", name = "user_id" /><br>
+                    <img src="../image/user.png">
+                    <input id='userid' type='text' placeholder="Username", name = "user_id", maxlength="10" /><br>
                 </div>
                 <div class="login_pw">
                     <h4>Password</h4>
-                    <input id='userpassword' type='password' placeholder="Password" name='user_password' /><br>
+                    <img src="../image/password.png">
+                    <input id='userpassword' type='password' placeholder="Password" name='user_password', maxlength='13' /><br>
                 </div>
                 <div class="login_check">
                     <input type="checkbox" name="" id=""> 로그인 정보 기억
                 </div>
                 <input type='submit' class="login_button" value="로그인">
-                <button onclick="location.href = '#'">회원가입</button>
             </form>
+            <button class = "signup" onclick="location.href = 'signup.html'">회원가입</button>
         </div>
+        <script>
+            function validation(){
+                if (document.getElementById('userid').value.length == 0){
+                    alert("아이디를 입력하세요");
+                    return false;
+                }else if(document.getElementById('userpassword').value.length == 0){
+                    alert("비밀번호를 입력하세요");
+                    return false;
+                }
+            }
+        </script>
     </section>
 
 </body>
