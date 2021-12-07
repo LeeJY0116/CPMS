@@ -4,29 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>CPMS</title>
-    <link rel="stylesheet" href="../static/main.css">
     {% load static %}
-    <link rel='stylesheet' type="text/css" href="{% static 'main.css' %}" />
+    <link rel='stylesheet' type="text/css" href="{% static 'index.css' %}" />
 </head>
 
 <body onload="mylocation()">
     <header id="headline" style="width:100%;height:200px;">
-        <div>
-            <h1><a href="">
+        <div class = "headd">
+            <img src='{% static "image/menu.png" %}'>
+            <h1><a href="" class="main">
                     오따세우
                 </a></h1>
-            <nav>
-                <a href="">로그인</a>
-                <a href="">내 주차권</a>
-            </nav>
+                <nav class = "linkage">
+                    <a href="">로그인</a>
+                    <a href="">내 주차권</a>
+                </nav>
         </div>
         <div class="center-container">
-            <input id="search" type="text" size=20 maxlength=20 placeholder="지역 또는 목적지를 검색" />
-            <input type="button" onclick="searchlocation(document.getElementById('search').value)" value="검색">
-            <button type="button" onclick="mylocation()" id="mylocation">현 위치</button>
+            <input id="search" type="text" size=20 maxlength=20 placeholder="지역 또는 목적지를 검색"  />
+            <input id="search-button"type="button" onclick="searchlocation(document.getElementById('search').value)" value="검색">
+            <img src='{% static "image/search.png" %}' class="search">
+            <img src="{% static 'image/location.png' %}" class ="location" alt="현 위치 이미지" onclick="mylocation()">
         </div>
     </header>
-    <div id="map" style="width:100%;height:50em;"></div>
+    <div id="map"></div>
 
     <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3fd06bc4839879de7fd8f6b44b09cc61&libraries=services"></script>

@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
+    {% load static %}
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <h2>
+            프로필
+        </h2>
+        <p>
+            닉네임: {{userName}}
+        </p>
+        <p>
+            아이디: {{userID}}
+        </p>
+    </div>
+    <div>
+        <p>
+            주차권 이름: 
+        </p>
+        <p>
+            <img src="{% static 'image/googleQR.png' %}" alt="qr코드">
+        </p>
+        <p>
+            
+        </p>
+        <p>
+            생성일: <br> 유효기간: 
+        </p>
+    </div>
 </body>
 </html>
