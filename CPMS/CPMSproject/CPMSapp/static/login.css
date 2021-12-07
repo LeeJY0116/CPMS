@@ -40,8 +40,12 @@
     font-size: 15pt;
 }
 
+<<<<<<< HEAD
 .login_button,
 .login>form>button {
+=======
+.login_button, .signup {
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
     box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.7), -1px -1px 3px rgba(0, 0, 0, 1);
     margin-top: 20px;
     background: #72F7BF;
@@ -64,7 +68,11 @@
     margin-left: 5%;
 }
 
+<<<<<<< HEAD
 .head li h1 a {
+=======
+.head li h1 a , .head li h1{
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
     color: white;
 }
 

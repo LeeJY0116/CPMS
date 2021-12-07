@@ -20,8 +20,18 @@ class MyTicket(models.Model):
         null = False,
     )
     objects = models.Manager
+<<<<<<< HEAD
     myTicket = models.TextField()
     myPaymentDetails = models.TextField()
 
     def __str__(self):
         return str(self.profile) + "\'s ticket"
+=======
+    ticket_name = models.CharField(max_length=10)
+    ticket_code = models.CharField(max_length=10)
+    create_date = models.DateTimeField(auto_now_add=True)
+    deadline_date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.ticket_name) + " ticket"
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Profile
+=======
+from django.db import models
+from django.shortcuts import render, redirect
+from .models import MyTicket, Profile
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
 
 # Create your views here.
 
@@ -78,4 +84,54 @@ def cpms_main_login(request, user_name):
     userName = user.userName
     if not log_now:
         return redirect('not_login')
+<<<<<<< HEAD
     return render(request, 'index.html', {'bool_logIO':log_now, 'user':userName})
+=======
+    return render(request, 'index.html', {'bool_logIO':log_now, 'user':userName})
+
+def cpms_ticket(request, user_name):
+    try:
+        user = Profile.objects.get(userName=user_name)
+    except:
+        return redirect('not_login')
+
+    # 로그인했는지 확인하는 bool변수
+    log_now = user.bool_logIO    
+    if not log_now:
+        return redirect('not_login')
+
+    tickets = MyTicket.objects.filter(profile=user)
+    context = {
+        'userName' : user.userName,
+        'userID' : user.userID,
+        'tickets' : tickets,
+    }
+
+    return render(request, 'myTicket.html', context)
+
+def cpms_create_ticket(request, user_name):
+    try:
+        user = Profile.objects.get(userName=user_name)
+    except:
+        return redirect('not_login')
+
+    # 로그인했는지 확인하는 bool변수
+    log_now = user.bool_logIO    
+    if not log_now:
+        return redirect('not_login')
+
+    return render(request, 'createTicket.html')
+
+def cpms_ticket_details(request, user_name):
+    try:
+        user = Profile.objects.get(userName=user_name)
+    except:
+        return redirect('not_login')
+
+    # 로그인했는지 확인하는 bool변수
+    log_now = user.bool_logIO    
+    if not log_now:
+        return redirect('not_login')
+
+    return render(request, 'ticketdetails.html')
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9

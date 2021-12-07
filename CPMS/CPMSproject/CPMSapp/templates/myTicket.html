@@ -5,11 +5,16 @@
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
     <div>
+=======
+    <div class="profile">
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
         <h2>
             프로필
         </h2>
         <p>
+<<<<<<< HEAD
             닉네임:
         </p>
         <p>
@@ -25,6 +30,25 @@
                 </h3>
             </p>
         </div>
+=======
+            닉네임: {{userName}}
+        </p>
+        <p>
+            아이디: {{userID}}
+        </p>
+    </div>
+    <div>
+        {% for ticket in tickets %}
+        <div class="content">
+            
+            <p>
+                <h3 class="title">
+                    보유 티켓 : {{ticket.ticket_name}}
+                </h3>
+            </p>
+        </div>
+        {% endfor %}
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
     </div>
 
 </body>
