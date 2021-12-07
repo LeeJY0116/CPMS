@@ -16,10 +16,25 @@ def cpms_signup(request):
         id = request.POST['s_userId']
         password = request.POST['s_userPw1']
         password_reconfirm = request.POST['s_user_Pw2']
-        print(nickname)
-        print(id)
-        print(password)
-        print(password_reconfirm)
+
+        context = {
+            'nickname':nickname,
+            'id':id,
+            'password':password,
+            'password_reconfirm':password_reconfirm,
+        }
+
+        if Profile.objects.filter(userName=nickname):
+            context['error_message'] = '해당 닉네임이 이미 존재합니다.'
+            return render(request, 'signup.html', context)
+        
+        if Profile.objects.filter(userID=id):
+            context['error_message'] = '해당 아이디는 이미 존재합니다.'
+            return render(request, 'signup.html', context)
+
+        if password != password_reconfirm:
+            context['error_message'] = '비밀번호가 서로 같지 않습니다.'
+            return render(request, 'signup.html', context)
         
         Profile.objects.create(
             userName=nickname,
