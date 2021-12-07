@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
+<<<<<<< HEAD
     <title>주차권 정보</title>
     {% load static %}
     <link rel='stylesheet' type="text/css" href="{% static 'ticketdetails.css' %}" />
+=======
+    <title>Document</title>
+    {% load static %}
+>>>>>>> dcf983cb8b01e5d5ca67f666f90117e31da04914
 </head>
 <body>
     <header>
@@ -30,13 +35,28 @@
             아이디: {{'userID'}}
         </p>
     </div>
+<<<<<<< HEAD
     <div class="ticket">
         <p id = "ticket-name">
             주차권 이름: {{'ticketName'}}
+=======
+    <div>
+        <p>
+            주차권 이름: {{ticketName}}
+>>>>>>> dcf983cb8b01e5d5ca67f666f90117e31da04914
         </p>
         <p >
             <img src="{% static 'image/googleQR.png' %}" alt="qr코드">
         </p>
+<<<<<<< HEAD
+=======
+        <p>
+            
+        </p>
+        <p>
+            생성일: {{createDate}}<br> 유효기간: {{deadlineDate}}
+        </p>
+>>>>>>> dcf983cb8b01e5d5ca67f666f90117e31da04914
     </div>
         <div class="ticket-detail">
         <p id = "create-date">
