@@ -1,6 +1,6 @@
-from django.http import HttpResponse
+from django.db import models
 from django.shortcuts import render, redirect
-from .models import Profile
+from .models import MyTicket, Profile
 
 # Create your views here.
 
@@ -79,3 +79,23 @@ def cpms_main_login(request, user_name):
     if not log_now:
         return redirect('not_login')
     return render(request, 'index.html', {'bool_logIO':log_now, 'user':userName})
+
+def cpms_ticket(request, user_name):
+    try:
+        user = Profile.objects.get(userName=user_name)
+    except:
+        return redirect('not_login')
+
+    # 로그인했는지 확인하는 bool변수
+    log_now = user.bool_logIO    
+    if not log_now:
+        return redirect('not_login')
+
+    tickets = MyTicket.objects.filter(profile=user)
+    context = {
+        'userName' : user.userName,
+        'userID' : user.userID,
+        'tickets' : tickets,
+    }
+
+    return render(request, 'myTicket.html', context)
