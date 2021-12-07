@@ -99,3 +99,29 @@ def cpms_ticket(request, user_name):
     }
 
     return render(request, 'myTicket.html', context)
+
+def cpms_create_ticket(request, user_name):
+    try:
+        user = Profile.objects.get(userName=user_name)
+    except:
+        return redirect('not_login')
+
+    # 로그인했는지 확인하는 bool변수
+    log_now = user.bool_logIO    
+    if not log_now:
+        return redirect('not_login')
+
+    return render(request, 'createTicket.html')
+
+def cpms_ticket_details(request, user_name):
+    try:
+        user = Profile.objects.get(userName=user_name)
+    except:
+        return redirect('not_login')
+
+    # 로그인했는지 확인하는 bool변수
+    log_now = user.bool_logIO    
+    if not log_now:
+        return redirect('not_login')
+
+    return render(request, 'ticketdetails.html')
