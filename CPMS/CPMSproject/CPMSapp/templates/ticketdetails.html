@@ -3,33 +3,48 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <title>Document</title>
+    <title>주차권 정보</title>
+    {% load static %}
+    <link rel='stylesheet' type="text/css" href="{% static 'ticketdetails.css' %}" />
 </head>
 <body>
-    <div>
+    <header>
+        <div class="head">
+            <li>
+                <!-- 뒤로가기 링크 -->
+                <h1><a href="javascript:window.history.back();">↩</a></h1>
+            </li>
+            <li>
+                <h1>주차권 정보</h1> 
+            </li>
+    </header>
+    <div class="profile">
         <h2>
             프로필
         </h2>
-        <p>
-            닉네임: {{userName}}
+        <img src='{% static "image/profile.png" %}'>
+        <p id="nickname">
+            닉네임: {{'userName'}}
         </p>
-        <p>
-            아이디: {{userID}}
+        <p id="userid">
+            아이디: {{'userID'}}
         </p>
     </div>
-    <div>
-        <p>
-            주차권 이름: 
+    <div class="ticket">
+        <p id = "ticket-name">
+            주차권 이름: {{'ticketName'}}
         </p>
-        <p>
+        <p >
             <img src="{% static 'image/googleQR.png' %}" alt="qr코드">
         </p>
-        <p>
-            
-        </p>
-        <p>
-            생성일: <br> 유효기간: 
-        </p>
     </div>
+        <div class="ticket-detail">
+        <p id = "create-date">
+            생성일: {{'create-date'}}
+        </p>
+        <p id = "expiration-date">
+            유효기간: {{'expiration-date'}}
+        </p>
+        </div>
 </body>
 </html>

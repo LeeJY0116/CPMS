@@ -33,8 +33,9 @@
 .profile p{
     top:250px;
     position: absolute;
-    font-size: 20pt;
-    margin-left: -44px;
+    font-size: 25pt;
+    font-weight: bold;
+    margin-left: -50px;
     margin-bottom: 3%;
 }
 
@@ -45,9 +46,17 @@
 .profile{
     height: 250px;
     margin-left: 444px;
+    margin-bottom: 1%;
 }
 
 .content {
-    background-color: green;
-    height: 100px;
+    outline: solid;
+    margin: 5% 2px 2px 2px;
+    font-size: 20pt;
+    height: 90px;
+    line-height: 90px;
+}
+
+.title{
+    background-color: lightgray;
 }
