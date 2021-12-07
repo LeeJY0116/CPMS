@@ -23,8 +23,8 @@
         <div class="center-container">
             <input id="search" type="text" size=20 maxlength=20 placeholder="지역 또는 목적지를 검색"  />
             <input id="search-button"type="button" onclick="searchlocation(document.getElementById('search').value)" value="검색">
-            <img src='{% static "image/search.png" %}'>
-            <img src="{% static 'image/location.png' %}" alt="현 위치 이미지" onclick="mylocation()">
+            <img src='{% static "image/search.png" %}' class="search">
+            <img src="{% static 'image/location.png' %}" class ="location" alt="현 위치 이미지" onclick="mylocation()">
         </div>
     </header>
     <div id="map"></div>
