@@ -5,26 +5,27 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="profile">
+    <div>
         <h2>
             프로필
         </h2>
-        <p id="nickname">
-            닉네임:
+        <p>
+            닉네임: {{userName}}
         </p>
-        <p id="userid">
-            아이디: 
+        <p>
+            아이디: {{userID}}
         </p>
     </div>
     <div>
-        {% for post in posts %}
+        {% for ticket in tickets %}
         <div class="content">
             <p>
                 <h3 class="title">
-                    {{ post. title}}
+                    {{ticket.ticket_name}}  {{ticket.ticket_code}} {{ticket.create_date}}
                 </h3>
             </p>
         </div>
+        {% endfor %}
     </div>
 
 </body>
