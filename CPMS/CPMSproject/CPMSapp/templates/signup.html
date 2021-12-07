@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/signup.css">
     <title>CPMS-signup</title>
+    {% load static %}
+    <link rel='stylesheet' type="text/css" href="{% static 'signup.css' %}" />
 </head>
 
 <body>
     <header>
         <div class="top" style="width: 100%;">
             <li>
-                <h1><a href="#">↩</a></h1>
+                <h1><a href="javascript:window.history.back();">↩</a></h1>
             </li>
             <li>
                 <h1>회원가입</h1>
@@ -25,40 +27,47 @@
         </div>
 
     </header>
-    <form name="CPMS-signup" action="{% url 'trying_signup' %}" method="post">
+    <form name="CPMS-signup" action="{% url 'trying_signup' %}" method="post" onsubmit="return validation()">
         {% csrf_token %}
         <div class="nickname">
             <br>
             <div class="nictext">닉네임</div><br>
-            <input type="text" name="s_user_name" placeholder="닉네임 입력">
+            <input type="text" name="s_user_name" id = "s_user_name" placeholder="닉네임 입력">
+
         </div>
         <div class="id">
             <br>
             <div class="idtext">아이디</div><br>
-            <input type="text" name="s_userId" class="idput" placeholder="아이디 입력">
+            <input type="text" name="s_userId" id ="s_userId" class="idput" placeholder="아이디 입력">
         </div>
         <div class="password">
             <br>
             <div class="pwtext">비밀번호</div><br>
-            <input type="password" name="s_userPw1" placeholder="비밀번호">
+            <input type="password" name="s_userPw1" id ="s_userPw1" placeholder="비밀번호">
         </div>
         <div class="password-reconfirm">
             <br>
             <div class="pwcftext">비밀번호 재확인</div><br>
-            <input type="password" name="s_user_Pw2" placeholder="동일한 비밀번호">
+            <input type="password" name="s_user_Pw2" id = "s_user_Pw2" placeholder="동일한 비밀번호">
         </div>
         <div class="signup-etc">
             <br>
-            <button name="s_user_submit" value="회원가입">회원가입</button>
+            <input type="submit" name="s_user_submit" value="회원가입">
         </div>
-
     </form>
-    <!-- <script>
-        function stopDefAction(evt) {
-            evt.preventDefault();
-        }
-    </script> -->
-
+    <script>
+        function validation(){
+                var nid = new Array("s_user_name", "s_userId", "s_userPw1", "s_user_Pw2")
+                var val = new Array("닉네임", "아이디", "비밀번호", "비밀번호 재확인")
+                //아무것도 입력 안했을 때
+                for (var i = 0; i < 4; i ++){
+                    if (document.getElementById(nid[i]).value.length == 0){
+                    alert(val[i]+"을 입력하세요");
+                    return false;
+                }
+                }
+            }
+    </script>
     <footer style="margin-top: 16%;">
         <div class="container col-lg-4 home_bottom_banner"
             style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
