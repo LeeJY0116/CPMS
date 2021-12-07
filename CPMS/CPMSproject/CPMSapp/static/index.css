@@ -68,7 +68,20 @@
     box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.7), -1px -1px 3px rgba(0, 0, 0, 1);
 }
 
-.center-container img
+.center-container img.location
+{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    bottom: 50px;
+    border-radius: 100px;
+    background-color: white;
+    outline: solid;
+    right: 40px;
+    z-index: 2;
+}
+
+.center-container img.search
 {
     position: absolute;
     height: 62px;
