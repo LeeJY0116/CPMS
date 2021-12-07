@@ -21,12 +21,15 @@ class MyTicket(models.Model):
     )
     objects = models.Manager
 <<<<<<< HEAD
+<<<<<<< HEAD
     myTicket = models.TextField()
     myPaymentDetails = models.TextField()
 
     def __str__(self):
         return str(self.profile) + "\'s ticket"
 =======
+=======
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
     ticket_name = models.CharField(max_length=10)
     ticket_code = models.CharField(max_length=10)
     create_date = models.DateTimeField(auto_now_add=True)
@@ -34,4 +37,7 @@ class MyTicket(models.Model):
 
     def __str__(self):
         return str(self.ticket_name) + " ticket"
+<<<<<<< HEAD
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
+=======
 >>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9

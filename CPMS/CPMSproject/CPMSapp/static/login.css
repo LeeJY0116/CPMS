@@ -41,8 +41,12 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .login_button,
 .login>form>button {
+=======
+.login_button, .signup {
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
 =======
 .login_button, .signup {
 >>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
@@ -69,7 +73,11 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .head li h1 a {
+=======
+.head li h1 a , .head li h1{
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
 =======
 .head li h1 a , .head li h1{
 >>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9

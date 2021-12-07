@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <title>CPMS</title>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <link rel="stylesheet" href="../static/main.css">
     {% load static %}
     <link rel='stylesheet' type="text/css" href="{% static 'main.css' %}" />
+=======
+    {% load static %}
+    <link rel='stylesheet' type="text/css" href="{% static 'index.css' %}" />
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
 =======
     {% load static %}
     <link rel='stylesheet' type="text/css" href="{% static 'index.css' %}" />
@@ -16,6 +21,7 @@
 
 <body onload="mylocation()">
     <header id="headline" style="width:100%;height:200px;">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <div>
             <h1><a href="">
@@ -35,6 +41,25 @@
         </div>
     </header>
     <div id="map" style="width:100%;height:50em;"></div>
+=======
+        <div class = "headd">
+            <img src='{% static "image/menu.png" %}'>
+            <h1><a href="" class="main">
+                    오따세우
+                </a></h1>
+                <nav class = "linkage">
+                    <a href="">로그인</a>
+                    <a href="">내 주차권</a>
+                </nav>
+        </div>
+        <div class="center-container">
+            <input id="search" type="text" size=20 maxlength=20 placeholder="지역 또는 목적지를 검색"  />
+            <input id="search-button"type="button" onclick="searchlocation(document.getElementById('search').value)" value="검색">
+            <img src='{% static "image/search.png" %}' onclick="mylocation()">
+        </div>
+    </header>
+    <div id="map"></div>
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
 =======
         <div class = "headd">
             <img src='{% static "image/menu.png" %}'>
@@ -76,15 +101,21 @@
         // 키워드로 장소를 검색합니다
         function searchlocation(data) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (data.length == 0){
                 return alert("검색어를 입력해 주세요");
             }
             else if(data.search("주차") == -1){
 =======
+=======
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
             if (data.length == 0) {
                 return alert("검색어를 입력해 주세요");
             }
             else if (data.search("주차") == -1) {
+<<<<<<< HEAD
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
+=======
 >>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
                 data = data + " 주차장";
             }
@@ -117,7 +148,11 @@
                 position: new kakao.maps.LatLng(place.y, place.x)
             });
 <<<<<<< HEAD
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
 =======
 
 >>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
@@ -133,6 +168,7 @@
                 infowindow.open(map, marker);
             });
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         if (navigator.geolocation) {
@@ -189,6 +225,8 @@
 
         }
 =======
+=======
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
         function mylocation() {
             if (navigator.geolocation) {
 
@@ -245,6 +283,9 @@
             }
         }
 
+<<<<<<< HEAD
+>>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
+=======
 >>>>>>> 708934baab6a3b5f32aaf5fca91b7b60848011c9
     </script>
 </body>
