@@ -111,7 +111,27 @@ def cpms_create_ticket(request, user_name):
     if not log_now:
         return redirect('not_login')
 
-    return render(request, 'createTicket.html')
+    if request.method == 'POST':
+        ticket_name = request.POST['ticketname']
+        ticket_code = request.POST['ticketcode']
+        ticket_deadline = request.POST['Validity']
+
+        # 주차권 생성
+        MyTicket.objects.create(
+            profile = user,
+            ticket_name = ticket_name,
+            ticket_code = ticket_code,
+            deadline_date = ticket_deadline,
+        )
+
+        return redirect('myticket', user_name)
+
+    context = {
+        'userName' : user.userName,
+        'userID' : user.userID,
+    }
+
+    return render(request, 'createTicket.html', context)
 
 def cpms_ticket_details(request, user_name):
     try:
