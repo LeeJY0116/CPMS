@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>
+            프로필
+        </h2>
+        <p>
+            닉네임: {{userName}}
+        </p>
+        <p>
+            아이디: {{userID}}
+        </p>
+    </div>
+    <div>
+        {% for ticket in tickets %}
+        <div class="content">
+            <p>
+                <h3 class="title">
+                    {{ticket.ticket_name}}  {{ticket.ticket_code}} {{ticket.create_date}}
+                </h3>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
