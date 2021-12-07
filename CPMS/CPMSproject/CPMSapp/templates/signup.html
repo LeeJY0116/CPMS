@@ -11,7 +11,7 @@
     <link rel='stylesheet' type="text/css" href="{% static 'signup.css' %}" />
 </head>
 
-<body>
+<body onload="rerender()">
     <header>
         <div class="top" style="width: 100%;">
             <li>
@@ -27,7 +27,7 @@
         </div>
 
     </header>
-    <form name="CPMS-signup" action="{% url 'trying_signup' %}" method="post" onsubmit="return validation()">
+    <form name="CPMS-signup" action="{% url 'trying_signup' %}" method="post" onsubmit="return validation()" >
         {% csrf_token %}
         <div class="nickname">
             <br>
@@ -67,6 +67,21 @@
                 }
                 }
             }
+        function rerender(){
+            if('{{error_message}}' == '비밀번호가 동일하지 않습니다.'){
+                alert('{{error_message}}');
+                document.getElementById('s_user_name').value = '{{nickname}}';
+                document.getElementById('s_userId').value = '{{id}}';
+            }
+            else if('{{nickname}}' != "" || '{{id}}'!="" || '{{password}}'!="" || '{{password_reconfirm}}'!="" ){
+                alert('{{error_message}}');
+                document.getElementById('s_user_name').value = '{{nickname}}';
+                document.getElementById('s_userId').value = '{{id}}';
+                document.getElementById('s_userPw1').value = '{{password}}';
+                document.getElementById('s_user_Pw2').value = '{{password_reconfirm}}';
+            }
+        }
+        
     </script>
     <footer style="margin-top: 16%;">
         <div class="container col-lg-4 home_bottom_banner"

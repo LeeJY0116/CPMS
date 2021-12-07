@@ -33,7 +33,7 @@ def cpms_signup(request):
             return render(request, 'signup.html', context)
 
         if password != password_reconfirm:
-            context['error_message'] = '비밀번호가 서로 같지 않습니다.'
+            context['error_message'] = '비밀번호가 동일하지 않습니다.'
             return render(request, 'signup.html', context)
         
         Profile.objects.create(
