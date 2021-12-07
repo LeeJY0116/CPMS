@@ -5,29 +5,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/signup.css">
     <title>CPMS-signup</title>
+    {% load static %}
+    <link rel='stylesheet' type="text/css" href="{% static 'signup.css' %}" />
 </head>
 
-<body>
-    <h1>CPMS 회원가입</h1>
-    <h3>CPMS 소중한 회원을 되어주세요</h3>
-    <form name="CPMS-signup" action="" method="post">
-        <br>닉네임<br>
-        <input type="text" name="s_user_name" placeholder="닉네임 입력">
-        <br>아이디<br>
-        <input type="text" name="s_userId" placeholder="아이디 입력">
-        <input type="button" name="s_userCheck" value="아이디 확인">
-        <br>
-        비밀번호<br>
-        <input type="password" name="s_userPw1" placeholder="비밀번호"><br>
-        비밀번호 재확인<br>
-        <input type="password" name="s_user_Pw2" placeholder="동일한 비밀번호">
-        <input type="button" name="s_user_PwCheck" value="비밀번호 재확인">
-        <br>
-        <input type="submit" name="s_user_submit" value="회원가입">
-    </form>
+<body onload="rerender()">
+    <header>
+        <div class="top" style="width: 100%;">
+            <li>
+                <h1><a href="javascript:window.history.back();">↩</a></h1>
+            </li>
+            <li>
+                <h1>회원가입</h1>
+            </li>
+        </div>
+        <div class="head">
+            <h1>CPMS 회원가입</h1>
+            <h3>CPMS 소중한 회원이 되어주세요</h3>
+        </div>
 
-    <footer>
+    </header>
+    <form name="CPMS-signup" action="{% url 'trying_signup' %}" method="post" onsubmit="return validation()" >
+        {% csrf_token %}
+        <div class="nickname">
+            <br>
+            <div class="nictext">닉네임</div><br>
+            <input type="text" name="s_user_name" id = "s_user_name" placeholder="닉네임 입력">
+
+        </div>
+        <div class="id">
+            <br>
+            <div class="idtext">아이디</div><br>
+            <input type="text" name="s_userId" id ="s_userId" class="idput" placeholder="아이디 입력">
+        </div>
+        <div class="password">
+            <br>
+            <div class="pwtext">비밀번호</div><br>
+            <input type="password" name="s_userPw1" id ="s_userPw1" placeholder="비밀번호">
+        </div>
+        <div class="password-reconfirm">
+            <br>
+            <div class="pwcftext">비밀번호 재확인</div><br>
+            <input type="password" name="s_user_Pw2" id = "s_user_Pw2" placeholder="동일한 비밀번호">
+        </div>
+        <div class="signup-etc">
+            <br>
+            <input type="submit" name="s_user_submit" value="회원가입">
+        </div>
+    </form>
+    <script>
+        function validation(){
+                var nid = new Array("s_user_name", "s_userId", "s_userPw1", "s_user_Pw2")
+                var val = new Array("닉네임", "아이디", "비밀번호", "비밀번호 재확인")
+                //아무것도 입력 안했을 때
+                for (var i = 0; i < 4; i ++){
+                    if (document.getElementById(nid[i]).value.length == 0){
+                    alert(val[i]+"을 입력하세요");
+                    return false;
+                }
+                }
+            }
+        function rerender(){
+            if('{{error_message}}' == '비밀번호가 동일하지 않습니다.'){
+                alert('{{error_message}}');
+                document.getElementById('s_user_name').value = '{{nickname}}';
+                document.getElementById('s_userId').value = '{{id}}';
+            }
+            else if('{{nickname}}' != "" || '{{id}}'!="" || '{{password}}'!="" || '{{password_reconfirm}}'!="" ){
+                alert('{{error_message}}');
+                document.getElementById('s_user_name').value = '{{nickname}}';
+                document.getElementById('s_userId').value = '{{id}}';
+                document.getElementById('s_userPw1').value = '{{password}}';
+                document.getElementById('s_user_Pw2').value = '{{password_reconfirm}}';
+            }
+        }
+        
+    </script>
+    <footer style="margin-top: 16%;">
         <div class="container col-lg-4 home_bottom_banner"
             style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
             <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-8rGrafz8kofQLWhf" data-ad-width="320"
