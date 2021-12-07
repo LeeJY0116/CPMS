@@ -10,18 +10,17 @@
             프로필
         </h2>
         <p id="nickname">
-            닉네임: {{userName}}
+            닉네임: {{'userName'}}
         </p>
         <p id="userid">
-            아이디: {{userID}}
+            아이디: {{'userID'}}
         </p>
     </div>
     <div>
-        <form action="" onsubmit="return validation()", method="POST">
-            {% csrf_token %}
-            <p>주차권 명칭: <input id="ticketname" type="text" name="ticketname" ></p>
-            <p>주차권 코드: <input id="ticketcode" type="text" name="ticketcode" maxlength="10"></p>
-            <p>유효 기간: <input id="Validity" type="text" name="Validity"></p>
+        <form action="" onsubmit="return validation()">
+            <p>주차권 명칭: <input id="ticketname" type="text"></p>
+            <p>주차권 코드: <input  id="ticketcode" type="text" maxlength="10" onmousedown="creatrandomNum()" readonly></p>
+            <p>유효 기간: <input id="Validity" type="text"></p>
             <input type="submit" id="submit" value="등록하기">
         </form>
     </div>
@@ -35,7 +34,10 @@
                     return false;
                 }
             }
-        }
+        }   
+        function creatrandomNum(){
+                document.getElementById('ticketcode').value = Math.floor(Math.random()*Math.pow(10,10));
+            }
     </script>
 </body>
 </html>
