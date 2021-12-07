@@ -20,7 +20,7 @@
     </div>
     <div>
         <p>
-            주차권 이름: 
+            주차권 이름: {{ticketName}}
         </p>
         <p>
             <img src="{% static 'image/googleQR.png' %}" alt="qr코드">
@@ -29,7 +29,7 @@
             
         </p>
         <p>
-            생성일: <br> 유효기간: 
+            생성일: {{createDate}}<br> 유효기간: {{deadlineDate}}
         </p>
     </div>
 </body>

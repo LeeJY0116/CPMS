@@ -133,7 +133,7 @@ def cpms_create_ticket(request, user_name):
 
     return render(request, 'createTicket.html', context)
 
-def cpms_ticket_details(request, user_name):
+def cpms_ticket_details(request, user_name, ticket_code):
     try:
         user = Profile.objects.get(userName=user_name)
     except:
@@ -144,4 +144,27 @@ def cpms_ticket_details(request, user_name):
     if not log_now:
         return redirect('not_login')
 
-    return render(request, 'ticketdetails.html')
+    tickets = MyTicket.objects.filter(profile=user)
+    print(tickets)
+    if not tickets:
+        # return redirect('myticket', user_name)
+        return render(request, 'myTicket.html', 
+                    {'find_error':(user_name + '님의 주차권을 찾을 수 없습니다.')})
+    
+    try:
+        ticket = tickets.get(ticket_code=ticket_code)
+        print(ticket)
+    except:
+        # return redirect('myticket', user_name)
+        return render(request, 'myTicket.html', 
+                    {'find_error':('해당 주차권을 찾을 수 없습니다.')})
+
+    context = {
+        'userName':user_name,
+        'userID':user.userID,
+        'ticketName':ticket.ticket_name,
+        'createDate':ticket.create_date,
+        'deadlineDate':ticket.deadline_date,
+    }
+    print(context)
+    return render(request, 'ticketdetails.html', context)
