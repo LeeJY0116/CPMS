@@ -48,10 +48,11 @@
 }
 .linkage {
     margin-left: 55%;
-    line-height: 130px;
+    line-height: 50px;
 }
 
 .linkage a{
+    display: flex;
     text-decoration: none;
     color: black;
     font-size: 15pt;

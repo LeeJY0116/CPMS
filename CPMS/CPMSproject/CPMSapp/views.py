@@ -76,7 +76,7 @@ def cpms_main_login(request, user_name):
     # 로그인했는지 확인하는 bool변수
     log_now = user.bool_logIO
     userName = user.userName
-    if not log_now:
+    if not log_now :
         return redirect('not_login')
     return render(request, 'index.html', {'bool_logIO':log_now, 'user':userName})
 
