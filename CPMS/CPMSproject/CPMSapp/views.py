@@ -111,29 +111,9 @@ def cpms_create_ticket(request, user_name):
     if not log_now:
         return redirect('not_login')
 
-    if request.method == 'POST':
-        ticket_name = request.POST['ticketname']
-        ticket_code = request.POST['ticketcode']
-        ticket_deadline = request.POST['Validity']
+    return render(request, 'createTicket.html')
 
-        # 주차권 생성
-        MyTicket.objects.create(
-            profile = user,
-            ticket_name = ticket_name,
-            ticket_code = ticket_code,
-            deadline_date = ticket_deadline,
-        )
-
-        return redirect('myticket', user_name)
-
-    context = {
-        'userName' : user.userName,
-        'userID' : user.userID,
-    }
-
-    return render(request, 'createTicket.html', context)
-
-def cpms_ticket_details(request, user_name, ticket_code):
+def cpms_ticket_details(request, user_name):
     try:
         user = Profile.objects.get(userName=user_name)
     except:
@@ -144,27 +124,4 @@ def cpms_ticket_details(request, user_name, ticket_code):
     if not log_now:
         return redirect('not_login')
 
-    tickets = MyTicket.objects.filter(profile=user)
-    print(tickets)
-    if not tickets:
-        # return redirect('myticket', user_name)
-        return render(request, 'myTicket.html', 
-                    {'find_error':(user_name + '님의 주차권을 찾을 수 없습니다.')})
-    
-    try:
-        ticket = tickets.get(ticket_code=ticket_code)
-        print(ticket)
-    except:
-        # return redirect('myticket', user_name)
-        return render(request, 'myTicket.html', 
-                    {'find_error':('해당 주차권을 찾을 수 없습니다.')})
-
-    context = {
-        'userName':user_name,
-        'userID':user.userID,
-        'ticketName':ticket.ticket_name,
-        'createDate':ticket.create_date,
-        'deadlineDate':ticket.deadline_date,
-    }
-    print(context)
-    return render(request, 'ticketdetails.html', context)
+    return render(request, 'ticketdetails.html')

@@ -24,13 +24,17 @@
     left: 20px;
 }
 
+#search{
+    font-size: 20pt;
+    padding-left: 65px;
+}
 #search-button{
     position: absolute;
     height: 62px;
     width: 60px;
     top: 110px;
     border-radius: 10px;
-    right: 74px;
+    right: 15px;
     font-size: 15pt;
     font-weight: bold;
 }
@@ -56,7 +60,6 @@
 ::placeholder{
    position: absolute;
    padding-top: 10px;
-   padding-left: 65px;
    font-size: 20pt;
 }
 
