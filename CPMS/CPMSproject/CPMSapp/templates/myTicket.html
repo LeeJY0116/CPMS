@@ -20,14 +20,13 @@
     <div class="profile">
         <img src='{% static "image/profile.png" %}'>
         <p id="nickname">
-            닉네임: {{'userName'}}
+            닉네임: {{userName}}
         </p>
         <p id="userid">
-            아이디: {{'userID'}}
+            아이디: {{userID}}
         </p>
     </div>
     <div>
-        {{find_error}}
         {% for ticket in tickets %}
         <div class="content">
             <p>
