@@ -12,12 +12,12 @@
     <header id="headline" style="width:100%;height:200px;">
         <div class = "headd">
             <img src='{% static "image/menu.png" %}'>
-            <h1><a href="" class="main">
+            <h1><a href="login_success/{{user_name}}/" class="main">
                     오따세우
                 </a></h1>
                 <nav class = "linkage">
-                    <a href="">로그인</a>
-                    <a href="">내 주차권</a>
+                    <a href="../login/">로그인</a>
+                    <a href="login_success/{{user_name}}/ticket/">내 주차권</a>
                 </nav>
         </div>
         <div class="center-container">
@@ -98,7 +98,6 @@
         }
         function mylocation() {
             if (navigator.geolocation) {
-
                 // GeoLocation을 이용해서 접속 위치를 얻어옵니다
                 navigator.geolocation.getCurrentPosition(function (position) {
 
@@ -107,7 +106,7 @@
 
                     var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
                         message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
-
+                    
                     // 마커와 인포윈도우를 표시합니다
                     current_displayMarker(locPosition, message);
 
