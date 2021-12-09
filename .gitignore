@@ -2,3 +2,4 @@ Lib/*
 Scripts/*
 *.cfg
 CPMS/Scripts/activate.bat
+db.sqlitte3
