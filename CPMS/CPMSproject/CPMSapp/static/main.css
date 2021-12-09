@@ -24,13 +24,17 @@
     left: 20px;
 }
 
+#search{
+    font-size: 20pt;
+    padding-left: 65px;
+}
 #search-button{
     position: absolute;
     height: 62px;
     width: 60px;
     top: 110px;
     border-radius: 10px;
-    right: 74px;
+    right: 15px;
     font-size: 15pt;
     font-weight: bold;
 }
@@ -44,10 +48,11 @@
 }
 .linkage {
     margin-left: 55%;
-    line-height: 130px;
+    line-height: 50px;
 }
 
 .linkage a{
+    display: flex;
     text-decoration: none;
     color: black;
     font-size: 15pt;
@@ -56,7 +61,6 @@
 ::placeholder{
    position: absolute;
    padding-top: 10px;
-   padding-left: 65px;
    font-size: 20pt;
 }
 

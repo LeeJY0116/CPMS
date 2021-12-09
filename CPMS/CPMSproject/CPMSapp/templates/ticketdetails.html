@@ -24,14 +24,14 @@
         </h2>
         <img src='{% static "image/profile.png" %}'>
         <p id="nickname">
-            닉네임: {{'userName'}}
+            닉네임: {{userName}}
         </p>
         <p id="userid">
-            아이디: {{'userID'}}
+            아이디: {{userID}}
         </p>
     </div>
-    <div class ="ticket">
-        <p>
+    <div class="ticket">
+        <p id = "ticket-name">
             주차권 이름: {{ticketName}}
         </p>
         <p >
@@ -45,6 +45,6 @@
         <p id ="deadlineDate">
              유효기간: {{deadlineDate}}
         </p>
-    </div>
+        </div>
 </body>
 </html>
