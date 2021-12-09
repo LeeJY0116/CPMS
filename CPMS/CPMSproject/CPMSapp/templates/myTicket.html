@@ -2,25 +2,34 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>내 주차권</title>
+    {% load static %}
+    <link rel='stylesheet' type="text/css" href="{% static 'myTicket.css' %}" />
 </head>
 <body>
+    <header>
+        <div class="head">
+            <li>
+                <!-- 뒤로가기 링크 -->
+                <h1><a href="javascript:window.history.back();">↩</a></h1>
+            </li>
+            <li>
+                <h1>내 주차권</h1> 
+            </li>
+    </header>
     <div class="profile">
-        <h2>
-            프로필
-        </h2>
-        <p>
-            닉네임: {{userName}}
+        <img src='{% static "image/profile.png" %}'>
+        <p id="nickname">
+            닉네임: {{'userName'}}
         </p>
-        <p>
-            아이디: {{userID}}
+        <p id="userid">
+            아이디: {{'userID'}}
         </p>
     </div>
     <div>
         {{find_error}}
         {% for ticket in tickets %}
         <div class="content">
-            
             <p>
                 <h3 class="title">
                     보유 티켓 : {{ticket.ticket_name}}

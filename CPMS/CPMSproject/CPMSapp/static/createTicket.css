@@ -1,0 +1,63 @@
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.head {
+    display: flex;
+    line-height: 86px;
+    background: #72F7BF;
+    width: 100%;
+    box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.7), -1px 0px 10px rgba(0, 0, 0, 1);
+}
+
+.head li {
+    margin-left: 5%;
+}
+
+.head li h1 a , .head li h1{
+    color: white;
+}
+
+.profile h2{
+    margin-top: 10%;
+    font-size: 40pt;
+    margin-left: 10%;
+}
+
+.profile img{
+    height: 300px;
+    width: 300px;
+}
+
+.profile p{
+    font-size: 30pt;
+    margin-bottom: 3%;
+}
+.profile{
+    height: 500px;
+    margin-left: 35%;
+}
+
+.regist{
+    margin-top: 15%;
+    height: 500px;
+    text-align: center;
+    font-size: 30pt;
+}
+
+.regist input{
+    border-radius: 9px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 30pt;
+    outline: solid;
+    margin-bottom: 5%;
+}
+
+#submit{
+    width: 250px;
+}
