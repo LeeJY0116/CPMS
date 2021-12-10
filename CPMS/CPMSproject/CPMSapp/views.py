@@ -14,6 +14,18 @@ def cpms_not_login(request):
     # login_error = '로그인이 필요한 서비스입니다.'    
     return render(request, 'login.html', error_message)
 
+def cpms_go_main(request):
+    return redirect('not_login')
+
+def cpms_go_main_login(request, user_name):
+    return redirect('login_of_user_name', user_name)
+
+def cpms_try_logout(request, user_name):
+    user = Profile.objects.get(userName=user_name)
+    user.bool_logIO = False  # 로그인 변수 True로 변경
+    user.save()     # Update후, save() 필수!
+    return redirect('not_login')
+
 def cpms_signup(request):
     bool_nameCheck = False
     bool_idCheck = False
