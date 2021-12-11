@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\bbt12\Desktop\university\시스템분석설계및지식재산\기말고사\CPMS"
+VIRTUAL_ENV="C:\Users\dlwnd\Desktop\CPMS\CPMS"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

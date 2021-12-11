@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>내 주차권</title>
     {% load static %}
-    <link rel='stylesheet' type="text/css" href="{% static 'myTicket.css' %}" />
+    <link rel='stylesheet' type="text/css" href="{% static 'myTicket.css' %}?after" />
 </head>
 <body>
     <header>
@@ -26,7 +26,9 @@
             아이디: {{userID}}
         </p>   
     </div>
-    <input type="button"  value="주차권 등록">
+    <div class='create_ticket'>
+    <a href='../createticket/' class="addticket">주차권 등록</a>
+    </div>
     <div>
         {% for ticket in tickets %}
         <div class="content">

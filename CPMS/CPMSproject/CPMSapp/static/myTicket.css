@@ -4,6 +4,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    color: inherit;
 }
 
 .head {
@@ -59,4 +60,18 @@
 
 .title{
     background-color: lightgray;
+}
+
+.create_ticket{
+    margin-top: 5%;
+    text-align: center;
+    font-size: 25pt;
+    font-weight: bold;
+}
+.addticket{
+    color: rgb(26, 14, 196);
+    background-color: white;
+    border-radius: 10px;
+    padding: 1%;
+    outline: solid;
 }
