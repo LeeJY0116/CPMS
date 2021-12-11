@@ -24,14 +24,15 @@
         </p>
         <p id="userid">
             아이디: {{userID}}
-        </p>
+        </p>   
     </div>
+    <input type="button"  value="주차권 등록">
     <div>
         {% for ticket in tickets %}
         <div class="content">
             <p>
                 <h3 class="title">
-                    보유 티켓 : {{ticket.ticket_name}}
+                    <a href="ticketdetails={{ticket.ticket_code}}">보유 티켓 : {{ticket.ticket_name}}</a>
                 </h3>
             </p>
         </div>

@@ -7,6 +7,25 @@ from .models import MyTicket, Profile
 def cpms_main(request):    
     return render(request, 'index.html', {'bool_logIO':False})
 
+def cpms_not_login(request):
+    error_message = {
+        'login_error' : '로그인이 필요한 서비스입니다.',
+    }    
+    # login_error = '로그인이 필요한 서비스입니다.'    
+    return render(request, 'login.html', error_message)
+
+def cpms_go_main(request):
+    return redirect('not_login')
+
+def cpms_go_main_login(request, user_name):
+    return redirect('login_of_user_name', user_name)
+
+def cpms_try_logout(request, user_name):
+    user = Profile.objects.get(userName=user_name)
+    user.bool_logIO = False  # 로그인 변수 True로 변경
+    user.save()     # Update후, save() 필수!
+    return redirect('not_login')
+
 def cpms_signup(request):
     bool_nameCheck = False
     bool_idCheck = False
@@ -76,9 +95,9 @@ def cpms_main_login(request, user_name):
     # 로그인했는지 확인하는 bool변수
     log_now = user.bool_logIO
     userName = user.userName
-    if not log_now:
+    if not log_now :
         return redirect('not_login')
-    return render(request, 'index.html', {'bool_logIO':log_now, 'user':userName})
+    return render(request, 'index.html', {'bool_logIO':log_now, 'user_name':userName})
 
 def cpms_ticket(request, user_name):
     try:
@@ -112,9 +131,14 @@ def cpms_create_ticket(request, user_name):
         return redirect('not_login')
 
     if request.method == 'POST':
+        # user = Profile.objects.get(userName=user_name)
+        # print(user)
         ticket_name = request.POST['ticketname']
+        print(ticket_name)
         ticket_code = request.POST['ticketcode']
+        print(ticket_code)
         ticket_deadline = request.POST['Validity']
+        print(ticket_deadline)
 
         # 주차권 생성
         MyTicket.objects.create(
@@ -123,7 +147,7 @@ def cpms_create_ticket(request, user_name):
             ticket_code = ticket_code,
             deadline_date = ticket_deadline,
         )
-
+        
         return redirect('myticket', user_name)
 
     context = {
@@ -145,26 +169,36 @@ def cpms_ticket_details(request, user_name, ticket_code):
         return redirect('not_login')
 
     tickets = MyTicket.objects.filter(profile=user)
-    print(tickets)
+    
     if not tickets:
         # return redirect('myticket', user_name)
-        return render(request, 'myTicket.html', 
-                    {'find_error':(user_name + '님의 주차권을 찾을 수 없습니다.')})
+        error_message = {
+            'userName':user_name,
+            'userID':user.userID,
+            'tickets':tickets,
+            'find_error':(user_name + '님의 주차권을 찾을 수 없습니다.'),
+        }
+        return render(request, 'createTicket.html', error_message)
     
     try:
         ticket = tickets.get(ticket_code=ticket_code)
-        print(ticket)
     except:
         # return redirect('myticket', user_name)
-        return render(request, 'myTicket.html', 
-                    {'find_error':('해당 주차권을 찾을 수 없습니다.')})
+        error_message = {
+            'userName':user_name,
+            'userID':user.userID,
+            'tickets':tickets,
+            'find_error':'해당 주차권을 찾을 수 없습니다.',
+        }
+        return render(request, 'myTicket.html', error_message)
 
     context = {
         'userName':user_name,
         'userID':user.userID,
         'ticketName':ticket.ticket_name,
+        'ticket_code':ticket_code,
         'createDate':ticket.create_date,
         'deadlineDate':ticket.deadline_date,
     }
-    print(context)
+    
     return render(request, 'ticketdetails.html', context)

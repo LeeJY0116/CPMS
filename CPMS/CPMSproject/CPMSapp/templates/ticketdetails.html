@@ -24,26 +24,26 @@
         </h2>
         <img src='{% static "image/profile.png" %}'>
         <p id="nickname">
-            닉네임: {{'userName'}}
+            닉네임: {{userName}}
         </p>
         <p id="userid">
-            아이디: {{'userID'}}
+            아이디: {{userID}}
         </p>
     </div>
     <div class="ticket">
         <p id = "ticket-name">
-            주차권 이름: {{'ticketName'}}
+            주차권 이름: {{ticketName}}
         </p>
         <p >
             <img src="{% static 'image/googleQR.png' %}" alt="qr코드">
         </p>
     </div>
-        <div class="ticket-detail">
+    <div class ="ticket-detail">
         <p id = "create-date">
-            생성일: {{'create-date'}}
+            생성일: {{createDate}}
         </p>
-        <p id = "expiration-date">
-            유효기간: {{'expiration-date'}}
+        <p id ="deadlineDate">
+             유효기간: {{deadlineDate}}
         </p>
         </div>
 </body>

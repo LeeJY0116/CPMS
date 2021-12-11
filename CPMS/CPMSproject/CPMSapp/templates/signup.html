@@ -62,9 +62,19 @@
                 //아무것도 입력 안했을 때
                 for (var i = 0; i < 4; i ++){
                     if (document.getElementById(nid[i]).value.length == 0){
-                    alert(val[i]+"을 입력하세요");
-                    return false;
+                        alert(val[i]+"을 입력하세요");
+                        return false;
+                    }
                 }
+                
+                if (document.getElementById('s_userId').value.search(/[^a-zA-Z0-9]+$/) != -1){
+                    
+                    alert("ID를 확인하세요");
+                    return false;
+                }else if (document.getElementById('s_userId').value.search(/[가-힣]+/) != -1){
+                    
+                    alert("ID를 확인하세요");
+                    return false;
                 }
             }
         function rerender(){

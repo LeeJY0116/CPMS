@@ -6,18 +6,31 @@
     <title>CPMS</title>
     {% load static %}
     <link rel='stylesheet' type="text/css" href="{% static 'main.css' %}" />
+    <script>
+        function logshowhide(){
+                //로그인 로그아웃
+                if(window.location.href.search('login_success') != -1){
+                document.getElementById('mainlogin').style.display = 'none';
+                document.getElementById('mainlogout').style.display = 'block';
+            }else{
+                document.getElementById('mainlogin').style.display = 'block';
+                document.getElementById('mainlogout').style.display = 'none';
+            }
+        }
+    </script>
 </head>
 
-<body onload="mylocation()">
+<body onload="mylocation(),logshowhide()">
     <header id="headline" style="width:100%;height:200px;">
         <div class = "headd">
             <img src='{% static "image/menu.png" %}'>
-            <h1><a href="../../../../login_success/{{user_name}}/" class="main">
+            <h1><a href="goingMain/" class="main">
                     오따세우
                 </a></h1>
                 <nav class = "linkage">
-                    <a href="../../login/">로그인</a>
-                    <a href="../../login_success/{{user_name}}/ticket/">내 주차권</a>
+                    <a href="../../login/" id="mainlogin">로그인</a>
+                    <a href="logout/" id="mainlogout">로그아웃</a>
+                    <a href="ticket/">내 주차권</a>
                 </nav>
         </div>
         <div class="center-container">
@@ -27,8 +40,8 @@
             <img src="{% static 'image/location.png' %}" class ="location" alt="현 위치 이미지" onclick="mylocation()">
         </div>
     </header>
+    
     <div id="map"></div>
-
     <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3fd06bc4839879de7fd8f6b44b09cc61&libraries=services"></script>
     <script>
@@ -54,6 +67,7 @@
             }
             else if (data.search("주차") == -1) {
                 data = data + " 주차장";
+                document.getElementById('search').value =data;
             }
             ps.keywordSearch(data, placesSearchCB);
         }

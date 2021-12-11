@@ -11,7 +11,7 @@
     <link rel='stylesheet' type="text/css" href="{% static 'login.css' %}" />
 </head>
 
-<body onload="loginvalidation()">
+<body onload="loginvalidation(), needToLogin()">
     <header>
         <div class="head" style="width: 100%;">
                 <li>
@@ -48,6 +48,14 @@
         </div>
 
         <script>
+            function needToLogin(){
+                var message = "{{login_error}}";
+                if (message.length !=0){
+                    alert(message);
+                    location.replace('../login');
+
+                }
+            }
             function loginvalidation(){
                 //아이디 비밀번호 틀릴 때
                 if('{{str_error}}'.length != 0){ 
