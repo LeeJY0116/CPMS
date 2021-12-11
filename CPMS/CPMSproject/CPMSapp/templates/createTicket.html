@@ -14,7 +14,7 @@
                 <h1><a href="javascript:window.history.back();">↩</a></h1>
             </li>
             <li>
-                <h1>주차권 생성하기</h1> 
+                <h1><a href="../">주차권 생성하기</a></h1> 
             </li>
     </header>
     <div class="profile">
@@ -34,7 +34,7 @@
             {% csrf_token %}
             <p>주차권 명칭: <input id="ticketname" type="text" name='ticketname' maxlength="10"></p>
             <p>주차권 코드: <input id="ticketcode" type="text" name='ticketcode' maxlength="10" onmousedown="creatrandomNum()"></p>
-            <p>유 효 기 간    : <input id="Validity" type="text" name='Validity' maxlength="20"></p>
+            <p>유 효 기 간    : <input id="Validity" type="text" name='Validity' maxlength="20" placeholder="22.01.01"></p>
             <input type="submit" id="submit" value="등록하기">
         </form>
     </div>
