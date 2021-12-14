@@ -5,3 +5,5 @@ http://127.0.0.1:8000<br>http://127.0.0.1:5500<br>
 
 본 앱은 iPad 화면을 기반으로 제작되었기 때문에 일반 웹 브라우저로 진입한다면 화면 비율이 고르지 못함을 알립니다.<br>
 본 앱의 웹사이트에 진입하기 앞서 브라우저 개발자 도구에 진입하여 Ctrl + Shift + M 단축키를 사용하여 장치 애뮬레이션 토글 기능을 사용한 뒤 iPad를 선택하여주시기 바랍니다.<br>
+
+**본 Virtual Environment에는 Python 경로설정이 되어있지 않기 때문에 CPMSProject 이전폴더에 pyvenv.cfg 파일을 작성하여야 Python을 통하여 .manage.py를 runserver 할 수 있습니다.**<br>
